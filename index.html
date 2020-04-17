@@ -19,19 +19,16 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Date', 'Population', 'Covid-19 Infections'],
-          ['October 2019', 7700000000, 1000],
-          ['November 2019', 7700000000, 1200],
-          ['December 2019', 7700000000, 11900],
-          ['January 2020', 7700000000, 131500],
-          ['February 2020', 7700000000, 231500],
-          ['March 2020', 7800000000, 331500],
-          ['April 2, 2020', 7800000000, 1000000],
-          ['April 16, 2020', 7800000000, 2078277],
+          ['Date', 'Covid-19 Infections'],
+          ['December 2019', 10000],
+          ['January 31, 2020', 11950],
+          ['February 29, 2020', 86604],
+          ['March 31, 2020', 859798],
+          ['April 16, 2020', 2181334],
         ]);
 
         var options = {
-          title: 'Spread of Covid-19',
+          title: 'Worldwide Spread of Covid-19',
           curveType: 'function',
           legend: { position: 'bottom' }
         };
