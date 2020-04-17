@@ -9,7 +9,38 @@
   <body>
     <div class='main'>
       <h1 class='page-header'>covid-19 cases plotted over time, versus total population.</h1>
+
+      <div class='chart-container' id="curve_chart" style="width: 900px; height: 500px"></div>
     </div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', { 'packages': ['corechart'] });
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Date', 'Population', 'Covid-19 Infections'],
+          ['October 2019', 7700000000, 1000],
+          ['November 2019', 7700000000, 1200],
+          ['December 2019', 7700000000, 11900],
+          ['January 2020', 7700000000, 131500],
+          ['February 2020', 7700000000, 231500],
+          ['March 2020', 7800000000, 331500],
+          ['April 2, 2020', 7800000000, 1000000],
+          ['April 16, 2020', 7800000000, 2078277],
+        ]);
+
+        var options = {
+          title: 'Spread of Covid-19',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
     <script src='app.js'></script>
   </body>
 </html>
